@@ -1,0 +1,5 @@
+Conducted thorough and efficient Smoke and Regression testing for every new build, identifying critical issues and preventing production defects, resulting in a 40% reduction in post-release bug reports.
+Managed issue resolution in Jira, collaborating with the development team for Defect Process Management
+Worked with Selenium WebDriver, Cucumber, and a Java-based framework using IntelliJ IDEA and Git/GitHub for version control.
+Performed API testing based on Swagger documentation, created collections, verified HTTP status codes, response headers, response payload, and conducted basic performance testing
+Developed and executed SQL queries to validate frontend and backend data integrity (MySQL).
