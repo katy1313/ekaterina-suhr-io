@@ -110,14 +110,12 @@ img {
 
 .links {
   background-color: #7f5539;
-  /* padding: 30px 100px; */
   padding: 2em 3em;
   display: flex;
 }
 
 .links > a {
   color: #ede0d4;
-  /* font-size: 18px; */
   font-size: 1.2rem;
   text-decoration: none;
 }
@@ -281,6 +279,10 @@ Desktop style */
 
   .links {
     padding: 2em 10em;
+  }
+
+  .links > a {
+    font-size: 1.4rem;
   }
 }
 
