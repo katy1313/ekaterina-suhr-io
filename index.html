@@ -85,6 +85,33 @@
                 </a>
             </div>
         </section>
+
+        <section id="leave_message">
+            <h2>LEAVE A MESSAGE</h2>
+            <form name="leave_message">
+                <div class="flex_container">
+                    <label>Username</label>
+                    <input class="usersName" type="text" name="usersName" placeholder="Enter your username" required="true"> 
+                    <br>
+                </div>
+                <div class="flex_container">
+                    <label>Email</label>
+                    <input class='email' type="email" name="usersEmail" placeholder="Enter email" required="true">
+                    <br>
+                </div>
+                <div class="flex_container">
+                    <label>Message</label>
+                <textarea class="message" name="usersMessage" placeholder="Type your nessage here" required="true"></textarea><br>
+                </div>
+                <button class="submit_button" type="submit" aria-label="button">Submit</button>
+            </form>    
+        </section>
+
+        <section id="messages">
+            <h2>MESSAGES</h2>
+            <ul class="message_list"></ul>
+        </section>
+
         <script src="js/index.js"></script>
     </body>
 </html>

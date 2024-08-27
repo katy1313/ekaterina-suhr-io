@@ -168,6 +168,35 @@ nav a:focus {
   text-decoration: underline;
 }
 
+.flex_container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 6em;
+}
+
+.usersName, .email, .message {
+  height: 3em;
+  border: solid 0.2em #a68a64;
+  border-radius: 0.6em;
+  font-size: medium;
+}
+
+button {
+  background-color: #7e5c45;
+  color: #fff;
+  border:none;
+  border-radius:10px;
+  /* box-shadow: 0px 0px 2px 2px rgb(0,0,0); */
+  min-height: 2.5em; 
+  min-width: 6em;
+  font-size: large;
+  margin: 0 7.5em;
+}
+
+button:hover, button:focus {
+  background-color: #b38364;
+}
+
 /* =====================================================
 Tablet style */
 
