@@ -9,23 +9,18 @@ const footer = document.querySelector('footer');
 const copyright = document.createElement('p');
 
 copyright.innerHTML = `\u00A9 Ekaterina Suhr  ${thisYear}`;
+copyright.style.color = '#ede0d4';
 
 footer.appendChild(copyright);
-copyright.style.margin = '10px 50px';
 
 const skills = ["JavaScript", "HTML", "CSS", "API", "GitHub", "SQL"];
 const skillsSection = document.querySelector('#skills');
 const skillList = skillsSection.querySelector('ul');
-skillList.style.listStyle = 'none';
-skillList.style.padding = '0';
-skillList.style.display = 'flex';
-skillList.style.flexDirection = 'column';
 
 for(let i = 0; i < skills.length; i++) {
     const skill = document.createElement('li');
     skill.innerHTML = skills[i];
     skillList.appendChild(skill);
-    skill.style.margin = '0 3em';
 }
 
 // Creating the Submit Form
@@ -66,7 +61,7 @@ function submitMessage(event) {
     // To hide the message section when empty
         if(messageList.children.length === 0) {
             messageSection.style.display = 'none';
-            leaveMessage.append(el);
+            leaveMessage.append(footer);
         }
     });  
    
@@ -79,15 +74,55 @@ function submitMessage(event) {
     editButton.addEventListener('click', function(){
        newMessage.innerHTML = `<a href="mailto:${email}">${username}</a>
        <textarea> ${message}</textarea>`
+
+       //Creating the secind Submit button
+       const resubmitButton = document.createElement('button');
+       resubmitButton.innerHTML = "Submit";
+       resubmitButton.setAttribute("type", "submit");
+       resubmitButton.setAttribute("class", "resubmit_button");
+       newMessage.appendChild(resubmitButton);
        newMessage.appendChild(removeButton);
-       newMessage.appendChild(editButton); 
+       
+       newMessage.addEventListener('submit', () => {
+       const message = event.target.textarea.value;
+            newMessage.innerHTML = `<a href="mailto:${email}">${username}</a>
+            <span> ${message}</span>`;
+       })
     });
 
-    newMessage.appendChild(removeButton);
+
+    newMessage.appendChild(editButton);
     messageList.appendChild(newMessage);
-    newMessage.appendChild(editButton);   
+    newMessage.appendChild(removeButton);   
 
     messageForm.reset(); //to reset the fields after submit
 }
 
+// Creating fetch
+fetch("https://api.github.com/users/katy1313/repos")
+.then(response => {
+    if(!response.ok) {
+        throw new Error("Not Found");
+    }
+    return response.json();
+})
+.then(repositories => {
+    if(repositories.length === 0) {
+        throw new Error("No repos exist");
+    } else {
+        console.log(repositories);
+    }  
+    //Display repositories in the list
+    const projectSection = document.querySelector('#projects');
+    const projectList = document.createElement('ul');
+    projectSection.appendChild(projectList);
 
+    for(let i = 0; i < repositories.length; i++) {
+        const project = document.createElement('li');
+        project.innerHTML = repositories[i].name;
+        projectList.appendChild(project);
+}
+})
+.catch(error => {
+    console.log(error);
+})
