@@ -17,7 +17,7 @@ h1 {
 
 h2 {
   color: #652613;
-  border-top: 3px solid rgb(91, 131, 118);
+  /* border-top: 3px solid rgb(91, 131, 118); */
   padding-top: 1em;
   text-align: center;
   font-size: 2rem;
@@ -59,7 +59,8 @@ img {
 .experience {
   display: flex;
   flex-direction: column;
-  margin: 0 2em 1em;
+  margin: auto;
+  width: 80%;
   padding: 0.2em;
 }
 
@@ -108,8 +109,14 @@ img {
   text-indent: 2em;
 }
 
+/* Connect section */
+
+#connect, #leave_message, #messages {
+  background-color: #c99f82;
+  padding-bottom: 1em;
+}
+
 .links {
-  background-color: #7f5539;
   padding: 2em 3em;
   display: flex;
 }
@@ -122,7 +129,7 @@ img {
 
 .links a:hover,
 .links a:focus {
-  color: #a68a64;
+  color: #6f460d;
   text-decoration: underline;
 }
 
@@ -168,6 +175,42 @@ nav a:focus {
   text-decoration: underline;
 }
 
+/* Project section */
+
+#projects ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   
+}
+
+#projects li {
+  padding: 0.5em;
+  background-color: #d0bba7;
+  width: 30%;
+  margin-bottom: 0.2em;
+  border-radius: 2px;
+}
+
+/* Skills section */
+
+#skills ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+#skills li {
+  padding: 0.2em 0.5em;
+  background-color: #d0bba7;
+  width: fit-content;
+  border-radius: 2px;
+  margin-bottom: 0.2em;
+}
+
+/* Leave a message and message sections */
+
 .flex_container {
   display: flex;
   flex-direction: column;
@@ -179,24 +222,86 @@ nav a:focus {
   border: solid 0.2em #a68a64;
   border-radius: 0.6em;
   font-size: medium;
+  text-indent: 2em;
+}
+
+.usersName:focus-visible, .email:focus-visible, .message:focus-visible, #messageText:focus-visible {
+  border: solid 0.2em #2d6054;
+  outline: none;
+}
+
+.message_list li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 2em;
+}
+
+.message_list li span {
+  height: 2.5em;
+  width: 40%;
+  border: solid 0.2em #a68a64;
+  border-radius: 0.6em;
+  font-size: medium;
+}
+
+.message_list textarea {
+  height: 1.5em;
+  width: 50%;
+  border: solid 0.2em #645035;
+  border-radius: 0.3em;
+  font-size: medium;
+}
+
+.message_list a {
+  color: #222f2c;
+  font-size: 1.5rem;
+  padding: .25em 0 .5em;
+}
+
+.message_list a:hover, .message_list a:focus {
+  color: #2d6054;
 }
 
 button {
   background-color: #7e5c45;
   color: #fff;
-  border:none;
-  border-radius:10px;
-  /* box-shadow: 0px 0px 2px 2px rgb(0,0,0); */
-  min-height: 2.5em; 
-  min-width: 6em;
-  font-size: large;
-  margin: 0 7.5em;
+  border: none;
+  border-radius: 3px;
+  max-height: 1.8em; 
+  min-width: 4.5em;
+  font-size: medium;
 }
 
 button:hover, button:focus {
   background-color: #b38364;
 }
 
+.submit_button {
+  background-color: #7e5c45;
+  color: #fff;
+  border:none;
+  border-radius: 5px;
+  min-height: 2em; 
+  min-width: 5em;
+  font-size: medium;
+  margin: 0 4em;
+}
+
+.submit_button:hover, .submit_button:focus {
+  background-color: #b38364;
+}
+
+#leave_message {
+  padding-bottom: 0.5em;
+}
+
+/* Footer section */
+footer {
+  margin-top: 0.5em;
+  padding: .5em 1em;
+  background-color: #2a3d39;
+}
 /* =====================================================
 Tablet style */
 
@@ -229,7 +334,6 @@ Tablet style */
 
   h2 {
     font-size: 2.2rem;
-    border-top: 5px solid rgb(91, 131, 118);
   }
 
   .image1 {
@@ -303,7 +407,7 @@ Desktop style */
 
   h2 {
     font-size: 2.5rem;
-    border-top: 8px solid rgb(91, 131, 118);
+    /* border-top: 8px solid rgb(91, 131, 118); */
   }
 
   .links {
@@ -312,6 +416,68 @@ Desktop style */
 
   .links > a {
     font-size: 1.4rem;
+  }
+
+  /* Skills section */
+
+  #skills ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    margin: .5em 6em;
+  } 
+
+  /* Projects section */
+
+  #projects ul {
+    margin: 0 4em;
+  }
+
+  #projects li {
+    width: 100%;
+  }
+
+  /* Buttons */
+
+  button {
+    border-radius:5px;
+    max-height: 2em; 
+    min-width: 5em;
+    font-size: medium;
+  }
+
+  .submit_button {
+    border-radius:10px;
+    min-height: 2.5em; 
+    min-width: 6em;
+    font-size: large;
+    margin: 0 7.5em;
+  }
+
+  /* Message list section */
+
+  .message_list li {
+    margin: 0 6em;
+  }
+
+  .message_list textarea {
+    height: 2.5em;
+    width: 50%;
+    border: solid 0.2em #645035;
+    border-radius: 0.6em;
+    font-size: medium;
+  }
+  
+  .message_list a {
+    color: #222f2c;
+    font-size: 2rem;
+    padding: .25em 1em .5em;
+  }
+
+  .message_list a {
+    font-size: 2rem;
+    padding: .25em 1em .5em;
   }
 }
 
