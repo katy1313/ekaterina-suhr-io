@@ -225,8 +225,9 @@ nav a:focus {
   text-indent: 2em;
 }
 
-.usersName:active, .email:active, .message:active, .message_list textarea:active {
+.usersName:focus-visible, .email:focus-visible, .message:focus-visible, #messageText:focus-visible {
   border: solid 0.2em #2d6054;
+  outline: none;
 }
 
 .message_list li {
