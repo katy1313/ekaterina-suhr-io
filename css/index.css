@@ -17,7 +17,6 @@ h1 {
 
 h2 {
   color: #652613;
-  /* border-top: 3px solid rgb(91, 131, 118); */
   padding-top: 1em;
   text-align: center;
   font-size: 2rem;
@@ -119,12 +118,15 @@ img {
 .links {
   padding: 2em 3em;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.links > a {
+.links a {
   color: #ede0d4;
   font-size: 1.2rem;
   text-decoration: none;
+  margin: 0 1em;
 }
 
 .links a:hover,
@@ -133,9 +135,9 @@ img {
   text-decoration: underline;
 }
 
-.gitlink {
-  margin-left: auto;
-}
+/* .gitlink {
+  margin-right: auto;
+} */
 
 /* Navigation */
 nav {
@@ -190,6 +192,13 @@ nav a:focus {
   width: 30%;
   margin-bottom: 0.2em;
   border-radius: 2px;
+}
+
+#projects a {
+  color: #652613;
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-decoration: none;
 }
 
 /* Skills section */
@@ -416,6 +425,7 @@ Desktop style */
 
   .links > a {
     font-size: 1.4rem;
+    margin: 0 2em;
   }
 
   /* Skills section */
@@ -436,6 +446,14 @@ Desktop style */
 
   #projects li {
     width: 100%;
+  }
+  #projects a{
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+
+  #projects a:hover, #projects a:active {
+    color: #b38364;
   }
 
   /* Buttons */

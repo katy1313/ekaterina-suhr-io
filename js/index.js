@@ -82,28 +82,28 @@ document.addEventListener('DOMContentLoaded', function () {
             let textarea = document.getElementById('messageText');
             textarea.addEventListener('input', function getText() {
                 text = textarea.value;
-                console.log(text);
             });
 
         //   Creating the second Submit button
             const resubmitButton = document.createElement('button');
             resubmitButton.innerHTML = "Submit";
-            resubmitButton.setAttribute("type", "submit");
+            resubmitButton.setAttribute("type", "button");
             resubmitButton.setAttribute("class", "resubmit_button");
             newMessage.appendChild(resubmitButton);
             newMessage.appendChild(removeButton);
 
-            const resubmitForm = document.querySelector('[name="resubmit_message"]');
-
         //  Displaying the edited message after the user clicks 'Submit' button
-            resubmitForm.addEventListener('submit', () => {
+            resubmitButton.addEventListener('click', () => {
                 newMessage.innerHTML = `<a href="mailto:${email}">${username}</a>
-            <span> ${text}</span>`;
+            <span> ${text || message}</span>`; //fallback to original if not edited
+
                 newMessage.appendChild(editButton);
                 messageList.appendChild(newMessage);
                 newMessage.appendChild(removeButton);
             })
         });
+
+        
         newMessage.appendChild(editButton);
         messageList.appendChild(newMessage);
         newMessage.appendChild(removeButton);
@@ -132,8 +132,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             for (let i = 0; i < repositories.length; i++) {
                 const project = document.createElement('li');
-                project.innerHTML = repositories[i].name;
+                const url = repositories[i].html_url;
+                const repoName = repositories[i].name;
+                project.innerHTML = `<a href="${url}" target="_blank" rel="nofollow">${repoName}</a>`
                 projectList.appendChild(project);
+
             }
         })
         .catch(error => {
