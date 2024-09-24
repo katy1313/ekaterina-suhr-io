@@ -12,6 +12,12 @@ This website implements a fully responsive design, allowing seamless viewing on 
 - **Connect Section**: This section contains links to social media and GitHub, along with an option to send an email directly.
 - **Leave a Message Section**: Users can submit messages, which will appear under the "Messages" section. Each message can be edited or removed by the user.
 
+
+### Run instrucrions:
+1. Download a zip file
+2. Unzip the code
+3. Open the index.html page in your web browser
+
 ---
 
 
