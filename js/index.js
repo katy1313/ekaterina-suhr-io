@@ -1,13 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    const el = document.createElement('footer');
+    const footer = document.createElement('footer');
     const messages = document.querySelector('#messages');
-    messages.append(el);
+    const messageSection = document.querySelector('#messages');
+    const messageList = messageSection.querySelector('ul');
+    const leaveMessage = document.querySelector('#leave_message');
+
+    if (messageList.children.length === 0) {
+        messageSection.style.display = 'none';
+        leaveMessage.append(footer);
+    } else {
+        messageSection.style.display = 'block';
+        messages.append(footer);
+    }
 
     const today = new Date();
     const thisYear = today.getFullYear();
-
-    const footer = document.querySelector('footer');
     const copyright = document.createElement('p');
 
     copyright.innerHTML = `\u00A9 Ekaterina Suhr  ${thisYear}`;
@@ -27,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Creating the Submit Form
     const messageForm = document.querySelector('[name="leave_message"]');
-    const leaveMessage = document.querySelector('#leave_message');
 
     messageForm.addEventListener('submit', submitMessage);
 
@@ -37,17 +44,20 @@ document.addEventListener('DOMContentLoaded', function () {
         const username = event.target.usersName.value;
         const email = event.target.usersEmail.value;
         const message = event.target.usersMessage.value;
-
-        console.log(username, email, message);
-
-        const messageSection = document.querySelector('#messages');
-        const messageList = messageSection.querySelector('ul');
         const newMessage = document.createElement('li'); //makes a new list item
         messageList.appendChild(newMessage);
 
         newMessage.innerHTML = `
         <a href="mailto:${email}">${username}</a>
         <span> ${message}</span>`;
+
+        if (messageList.children.length === 0) {
+            messageSection.style.display = 'none';
+            leaveMessage.append(footer);
+        } else {
+            messageSection.style.display = 'block';
+            messages.append(footer);
+        }
 
         // Remove button creation
         const removeButton = document.createElement('button');
@@ -64,6 +74,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (messageList.children.length === 0) {
                 messageSection.style.display = 'none';
                 leaveMessage.append(footer);
+            } else {
+                messages.append(footer);
             }
         });
 
