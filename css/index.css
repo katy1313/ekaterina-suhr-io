@@ -10,16 +10,21 @@ body {
 h1 {
   color: #050505;
   text-align: center;
-  margin: 4.5em 1em 1em;
+  margin: 2.5em 1em 1em;
   font-size: 3rem;
   font-weight: 700;
 }
 
 h2 {
   color: #652613;
-  padding-top: 1.5em;
+  padding-top: 2.9em;
   text-align: center;
   font-size: 2rem;
+  margin-top: 0;
+}
+
+#about h2 {
+  margin-right: 0.7em;
 }
 
 .container {
@@ -153,6 +158,8 @@ nav ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 5px;
+    padding-left: 0;
 }
 
 nav li {
@@ -179,12 +186,13 @@ nav a:focus {
   display: flex;
   flex-direction: column;
   justify-content: center;   
+  padding-left: auto;
 }
 
 #projects li {
   padding: 0.5em;
   background-color: #d0bba7;
-  width: 30%;
+  width: 85%;
   margin-bottom: 0.2em;
   border-radius: 2px;
 }
@@ -222,11 +230,11 @@ nav a:focus {
 }
 
 .usersName, .email, .message {
-  height: 3em;
+  height: 2em;
   border: solid 0.2em #a68a64;
   border-radius: 0.6em;
-  font-size: medium;
-  text-indent: 2em;
+  font-size: 0.8rem;
+  text-indent: 1em;
 }
 
 .usersName:focus-visible, .email:focus-visible, .message:focus-visible, #messageText:focus-visible {
@@ -242,11 +250,14 @@ nav a:focus {
 }
 
 .message_list li span {
-  height: 2.5em;
+  /* height: 2.5em; */
+  height: 1.5em;
   width: 40%;
   border: solid 0.2em #a68a64;
-  border-radius: 0.6em;
-  font-size: medium;
+  /* border-radius: 0.6em; */
+  border-radius: 0.3em;
+  /* font-size: medium; */
+  font-size: 1rem;
 }
 
 .message_list textarea {
@@ -259,7 +270,8 @@ nav a:focus {
 
 .message_list a {
   color: #222f2c;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
+  font-size: 1rem;
   padding: .25em 0 .5em;
 }
 
@@ -272,9 +284,12 @@ button {
   color: #fff;
   border: none;
   border-radius: 3px;
-  max-height: 1.8em; 
+  /* max-height: 1.8em; 
   min-width: 4.5em;
-  font-size: medium;
+  font-size: medium; */
+  max-height: 1.5em; 
+  min-width: 4em;
+  font-size: 0.8rem;
 }
 
 button:hover, button:focus {
@@ -286,9 +301,12 @@ button:hover, button:focus {
   color: #fff;
   border:none;
   border-radius: 5px;
-  min-height: 2em; 
+  /* min-height: 2em; 
   min-width: 5em;
-  font-size: medium;
+  font-size: medium; */
+  min-height: 1.5em; 
+  min-width: 4em;
+  font-size: 0.8rem;
   margin: 0 4em;
 }
 
@@ -332,7 +350,7 @@ Tablet style */
   nav ul {
     flex-direction: row;
     justify-content: space-around;
-    padding-top: 0.3em;
+    padding-top: 0.9em;
   } 
 
   nav a:hover,
@@ -373,6 +391,47 @@ Tablet style */
 
   .links {
     padding: 1.5em 8em;
+  }
+
+  #projects ul {
+    padding-left: 3.5em;
+  }
+
+  #projects li {
+    width: 90%;
+  }
+
+  #skills ul {
+    padding-left: 3.5em;
+  }
+
+  .usersName, .email, .message {
+    height: 3em;
+    font-size: medium; 
+    text-indent: 2em; 
+  }
+
+  .message_list li span {
+    height: 2.5em;
+    border-radius: 0.6em;
+    font-size: medium;
+  }
+
+  .message_list a {
+    font-size: 1.5rem;
+  }
+
+  button {
+    max-height: 1.8em; 
+    min-width: 4.5em;
+    font-size: medium;
+    margin-top: 0.25em;
+  }
+
+  .submit_button {
+    min-height: 2em; 
+    min-width: 5em;
+    font-size: medium;
   }
 }
 
@@ -415,7 +474,7 @@ Desktop style */
   nav ul {
     flex-direction: row;
     justify-content: space-around;
-    padding-top: 0.5em;
+    padding-top: 1.1em;
   } 
 
   body {
@@ -449,17 +508,20 @@ Desktop style */
     flex-direction: row;
     justify-content: space-between; 
     margin: .5em 6em;
+    padding-left: 1.5em;
   } 
 
   /* Projects section */
 
   #projects ul {
-    margin: 0 4em;
+    margin: 0 4em 0.5em;
+    padding-left: 2.5em;
   }
 
   #projects li {
-    width: 100%;
+    width: 95%;
   }
+
   #projects a{
     font-size: 1.8rem;
     font-weight: 400;
@@ -476,6 +538,7 @@ Desktop style */
     max-height: 2em; 
     min-width: 5em;
     font-size: medium;
+    margin-top: 0.25em;
   }
 
   .submit_button {
@@ -487,6 +550,12 @@ Desktop style */
   }
 
   /* Message list section */
+
+  .usersName, .email, .message {
+    height: 3em;
+    font-size: medium; 
+    text-indent: 2em; 
+  }
 
   .message_list li {
     margin: 0 6em;
@@ -506,9 +575,8 @@ Desktop style */
     padding: .25em 1em .5em;
   }
 
-  .message_list a {
-    font-size: 2rem;
-    padding: .25em 1em .5em;
+  .message_list li span {
+    height: 2.5em;
   }
 
   footer {
